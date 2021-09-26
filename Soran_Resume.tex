@@ -1,0 +1,226 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+% only for pdflatex
+% \input{glyphtounicode}
+
+% fontawesome
+\usepackage{fontawesome5}
+
+% fixed width
+\usepackage[scale=0.90,lf]{FiraMono}
+
+% light-grey
+\definecolor{light-grey}{gray}{0.83}
+\definecolor{dark-grey}{gray}{0.3}
+\definecolor{text-grey}{gray}{.08}
+
+\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
+
+% custom underilne
+\usepackage{contour}
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+
+% custom font: helvetica-style
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault} 
+%% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{0in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting - serif
+% \titleformat{\section}{
+%   \vspace{2pt} \scshape \raggedright\large % header section
+% }{}{0em}{}[\color{black} \titlerule \vspace{-5pt}]
+
+% TODO EBSERIES
+% sans serif sections
+\titleformat {\section}{
+    \bfseries \vspace{2pt} \raggedright \large % header section
+}{}{0em}{}[\color{light-grey} {\titlerule[2pt]} \vspace{-4pt}]
+
+% only for pdflatex
+% Ensure that generate pdf is machine readable/ATS parsable
+% \pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\ % top row of resume entry
+      \textit{#3} & {\color{dark-grey} \small #4}\\ % second row of resume entry
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & {\color{dark-grey}} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% CHANGED default leftmargin  0.15 in
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
+
+\color{text-grey}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge Soran Ismail} \\ \vspace{5pt}
+    \small \faPhone* \texttt{(519) 317 4347} \hspace{1pt} $|$
+    \hspace{1pt} \faEnvelope \hspace{2pt} \texttt{soran.i@outlook.com} \hspace{1pt} $|$ 
+    \hspace{1pt} \faMapMarker* \hspace{2pt} \texttt{London, ON} \hspace{1pt} $|$
+    \hspace{1pt} \faLink \hspace{2pt} \href{https://www.sorani.tech}{\texttt{sorani.tech}} \hspace{1pt}  $|$
+    \hspace{1pt} \faLinkedin \hspace{2pt} \href{https://www.linkedin.com/in/soran-ism/}{\texttt{soran-ism}} \hspace{1pt} $|$
+    \hspace{1pt} \faGithub \hspace{2pt} \href{https://github.com/Soran-i}{\texttt{Soran-i}}
+    \\ \vspace{-3pt}
+\end{center}
+
+%-----------EXPERIENCE-----------
+\section{WORK EXPERIENCE}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Wabtec Corporation}{May 2021 -- April 2022}
+      {Mechatronics Engineer Intern}{London, ON}
+      \resumeItemListStart
+        \resumeItem{Designed and implemented software for bench test equipment (BTE) to test various functionalities of event recorders including  JTAG, real time clock, serial number, ethernet, and GPIO}
+        \resumeItem{Increased available memory on BTE by \textbf{22\%} by reconstructing current tools to utilize TCP rather than RS-485 communication for power supply control}
+        \resumeItem{\textbf{Leveraged knowledge in} ARM Cortex architecture, embedded linux, embedded C/C++ software, oscilloscope debugging, Wireshark, and JTAG/SWD debugging interface}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Department of Earth Sciences, Western University}{May 2020 -- Apr 2021}
+      {Software Engineer}{London, ON}
+      \resumeItemListStart
+        \resumeItem{Migrated app to Google Maps from Mapbox API, increasing battery life by \textbf{34\%}}
+        \resumeItem{Identified memory leaks in objective-C using XCode debugging tools and fixed them by eliminating retain cycles}
+        \resumeItem{\textbf{Leveraged knowledge in} automatic reference counting, Google Maps, Mapbox, Scrum \& Agile and Model View Controller design pattern}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {Magna Seating}{May 2019 -- Sep 2019}
+      {Manufacturing Engineer Intern}{London, ON}
+      \resumeItemListStart
+        \resumeItem{Designed and constructed schematic for torque robot control panel, consisting of safety relays, PLC IO modules, and other rack devices for electrical safety authority approval}
+        \resumeItem{Utilized SolidWorks and 3D printing to reduce safety and ergonomic issues by \textbf{88\%} as they arose on the assembly line}
+        \resumeItem{Developed quality control program using Python to detect failures in robot inspection pictures requiring further verification}
+        \resumeItem{\textbf{Leveraged knowledge in} HTML, CSS, Javascript (ES6), Docker, Selenium, pyTesseract, and Fanuc robots}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+  \section{EXTRACURRICULAR}
+    \resumeSubHeadingListStart
+        \resumeSubheading
+        {FIRST Robotics Competition}{Sep 2016 -- Present}
+        {Lead Programmer, Mentor}{London, ON}
+        \resumeItemListStart
+            \resumeItem{Prepared programming workshops to ensure all students had a working knowledge of Java and Git Workflow prior to the start of the season}
+            \resumeItem{Developed strong understanding of mechatronic systems, contributing heavily to the design process occurring within a six-week time frame}
+            \resumeItem{Incorporated encoders, ultrasonic sensors, gyroscopes, and vision tracking in order to prepare autonomous mode}
+        \resumeItemListEnd
+        % \resumeSubheading
+        % {Solar Car Project}{Sep 2019 -- Apr 2020}
+        % {Low Power Telemetry Lead}{London, ON}
+        % \resumeItemListStart
+        %     \resumeItem{Led a team of students to design and implement a telemetry system for data transmission from solar car to chase car}
+        %     \resumeItem{Programmed firmware for the Atmega328 microcontroller in C/C++ to interface CAN bus communications with various control units on the solar car at a low level}
+        %     \resumeItem{Designed, soldered, and tested Printed Circuit Board to ensure proper functionality}
+        % \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+
+%-----------EDUCATION-----------
+\section {EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Western Ontario}{Sep 2018 -- Apr 2023}
+      {Bachelors of Engineering Science, Electrical Engineering}{London, ON}
+      \linebreak[1]
+      {\emph{\textsl{Bachelors of Science, Major in Computer Science}}}{}
+    %   	\resumeItemListStart
+    % 	\resumeItem {\textbf{EE Coursework}: Circuits \& Systems, Electronic Circuits, Digital Logic Systems, Control Systems, VLSI Design, Microprocessors \& Microcontrollers, Analog Communication Theory, Signals Processing}
+    %     \resumeItem{\textbf{CS Coursework}: Data Structures \& Algorithms, Software Tools \& Systems Programming, Computer Architecture \& Organization, Object Oriented Design, Data Science \& Machine Learning}
+    %     \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{SKILLS}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+      \textbf{Languages} {: C/C++, C\#, Java, Python, JavaScript (ES6), Objective-C, MATLAB, VHDL, ARM \& x86 Assembly, FreeRTOS}\vspace{2pt} \\
+     \textbf{Hardware} {: Oscilloscopes, Multimeters, Soldering, Sensors, Pneumatics, ARM Cortex, Serial Communication, FPGA}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
+		
